@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "733da49e-599b-4789-bdf2-ed43b1aabddb",
+		"name": "Delivery Router",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Deliveryman",
+			"item": [
+				{
+					"name": "Create deliveryman",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.collectionVariables.set(\"deliverymanId\", responseJson.deliverymanId);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"deliverymanId\": \"moto5\",\r\n\t\"servicePrice\": \"3\",\r\n\t\"exclusiveStores\": [\"-1\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/deliveryman",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deliveryman"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get deliveryman",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/deliveryman/{{deliverymanId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deliveryman",
+								"{{deliverymanId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all deliverymen",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/deliverymen",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"deliverymen"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "Create store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.collectionVariables.set(\"storeId\", responseJson.storeId);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"storeId\": \"store3\",\r\n\t\"percentage\": \"15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/store",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/store/{{storeId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store",
+								"{{storeId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all stores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/stores",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"stores"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"\r",
+									"    const responseJson = pm.response.json();\r",
+									"    pm.collectionVariables.set(\"storeId\", responseJson.storeId);\r",
+									"    pm.collectionVariables.set(\"orderId\", responseJson.orderId);\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"storeId\": \"store3\",\r\n    \"orderId\": \"order3\",\r\n\t\"orderValue\": \"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/store/{{storeId}}/order/{{orderId}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"store",
+								"{{storeId}}",
+								"order",
+								"{{orderId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/orders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Router",
+			"item": [
+				{
+					"name": "Get all routes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/router/calculate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"router",
+								"calculate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get routes by deliveryman",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const schema = {};\r",
+									"\r",
+									"//validate response status\r",
+									"pm.test(\"Status code is 200\", () => {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//do more tests if the response code is as expected\r",
+									"if (responseCode.code == 200) {\r",
+									"    pm.test(\"Validate schema\", () => {\r",
+									"        pm.response.to.have.jsonSchema(schema);\r",
+									"    });\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"deliverymanId\", \"moto2\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/router/calculate/deliveryman/{{deliverymanId}}?shared=true",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"router",
+								"calculate",
+								"deliveryman",
+								"{{deliverymanId}}"
+							],
+							"query": [
+								{
+									"key": "shared",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get shared routes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/router/calculate/deliveryman/{{deliverymanId}}?shared=true",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"router",
+										"calculate",
+										"deliveryman",
+										"{{deliverymanId}}"
+									],
+									"query": [
+										{
+											"key": "shared",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.1 Python/3.9.1"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Aug 2021 18:53:56 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"moto1\": {\n        \"orders\": [\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order1\",\n                \"storeId\": \"store1\"\n            },\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order2\",\n                \"storeId\": \"store1\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "Get all available routes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/router/calculate/deliveryman/{{deliverymanId}}?shared=false",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"router",
+										"calculate",
+										"deliveryman",
+										"{{deliverymanId}}"
+									],
+									"query": [
+										{
+											"key": "shared",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1112"
+								},
+								{
+									"key": "Server",
+									"value": "Werkzeug/2.0.1 Python/3.9.1"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 20 Aug 2021 18:55:30 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"moto1\": {\n        \"orders\": [\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order1\",\n                \"storeId\": \"store1\"\n            },\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order2\",\n                \"storeId\": \"store1\"\n            },\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order3\",\n                \"storeId\": \"store1\"\n            },\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order1\",\n                \"storeId\": \"store2\"\n            },\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order2\",\n                \"storeId\": \"store2\"\n            },\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order3\",\n                \"storeId\": \"store2\"\n            },\n            {\n                \"finalPayment\": 54.5,\n                \"orderId\": \"order4\",\n                \"storeId\": \"store2\"\n            },\n            {\n                \"finalPayment\": 59.5,\n                \"orderId\": \"order1\",\n                \"storeId\": \"store3\"\n            },\n            {\n                \"finalPayment\": 59.5,\n                \"orderId\": \"order2\",\n                \"storeId\": \"store3\"\n            },\n            {\n                \"finalPayment\": 117,\n                \"orderId\": \"order3\",\n                \"storeId\": \"store3\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "deliveryManId",
+			"value": ""
+		},
+		{
+			"key": "storeId",
+			"value": ""
+		},
+		{
+			"key": "deliverymanId",
+			"value": ""
+		},
+		{
+			"key": "orderId",
+			"value": ""
+		}
+	]
+}
