@@ -20,9 +20,10 @@ def route_orders_for_deliveryman(service_price, orders, stores, order_per_delive
 
 def route_for_deliverymen(deliverymen, stores, orders, order_per_deliveryman, result):
     for deliveryman in deliverymen:
+        deliverymanId = deliveryman.get('sk').split('#')[1]
         service_price = float(deliveryman.get('servicePrice'))
         deliveryman_orders, orders = route_orders_for_deliveryman(service_price, orders, stores, order_per_deliveryman)
-        result[deliveryman.get('sk').split('#')[1]] = {"orders": deliveryman_orders}
+        result[deliverymanId] = {"orders": deliveryman_orders, "deliverymanId": deliverymanId}
 
 def route_for_exclusive_deliverymen(deliverymen, exclusive_deliverymen, stores, orders, order_per_deliveryman, result):
     for deliveryman in exclusive_deliverymen:
@@ -65,8 +66,9 @@ def get_routes_by_deliveryman(deliveryman_id, shared):
     orders = db.fetch_orders()
 
     if shared:
-        deliverymen_to_count = utils.deserialize(db.fetch_deliverymen())
-        order_per_deliveryman = len(orders) / len(deliverymen_to_count)
+        routes = get_all_routes()
+        return routes[deliveryman_id]
+
     else:
         order_per_deliveryman = len(orders)
 
@@ -77,4 +79,3 @@ def get_routes_by_deliveryman(deliveryman_id, shared):
     else:
         route_for_deliverymen(deliverymen, stores, orders, order_per_deliveryman, result)
     return result
-

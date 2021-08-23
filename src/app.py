@@ -134,5 +134,5 @@ def get_all_routes():
 @app.route("/router/calculate/deliveryman/<string:deliveryman_id>")
 def get_routes_by_deliveryman(deliveryman_id):
     args = request.args
-    shared = True if "shared" in args and args["shared"] == 'true'else False
+    shared = True if "shared" in args and args["shared"] == 'true' else False
     return router.get_routes_by_deliveryman(deliveryman_id, shared)
